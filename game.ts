@@ -1,6 +1,7 @@
 import * as crypto from 'crypto';
 import * as readline from 'readline';
 import {AsciiTable3} from 'ascii-table3';
+import random from 'random';
 
 class Dice {
     constructor(public values: number[]) {
@@ -46,12 +47,7 @@ class CryptoHelper {
     }
 
     static generateNumber(range: number): number {
-        const max = 256;
-        let rand: number;
-        do {
-            rand = crypto.randomBytes(1)[0];
-        } while (rand >= max - (max % range));
-        return rand % range;
+        return crypto.randomInt(0,range-1);
     }
 
     static calculateHMAC(key: Buffer, msg: number): string {
