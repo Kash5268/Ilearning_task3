@@ -4,7 +4,7 @@ import {AsciiTable3} from 'ascii-table3';
 
 class Dice {
     constructor(public values: number[]) {
-        if (!Array.isArray(values) || values.length<2)
+        if (!Array.isArray(values) || values.length<=2)
             throw new Error('Dice must have at least three sides');
     }
 
