@@ -47,7 +47,7 @@ class CryptoHelper {
     }
 
     static generateNumber(range: number): number {
-        return crypto.randomInt(0,range-1);
+        return crypto.randomInt(0,range);
     }
 
     static calculateHMAC(key: Buffer, msg: number): string {
